@@ -1,7 +1,6 @@
 # AndroidImageCropper
 Android 图片裁剪器。
 
-
 ### 本应用的示例
 
 ![image](https://github.com/iWay7/AndroidImageCropper/blob/master/sample.gif)   
