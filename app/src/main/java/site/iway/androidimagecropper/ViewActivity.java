@@ -14,6 +14,6 @@ public class ViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
         ImageView imageView = findViewById(R.id.imageView);
-        imageView.setImageBitmap((Bitmap) MemCache.getObject("BITMAP"));
+        imageView.setImageBitmap((Bitmap) MemCache.get("BITMAP"));
     }
 }

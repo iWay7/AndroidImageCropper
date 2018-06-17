@@ -25,13 +25,13 @@ public class MainActivity extends Activity implements OnClickListener, OnChecked
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mImageCropper = (ImageCropper) findViewById(R.id.imageCropper);
-        mImageCropper.setBitmap(AssetsHelper.readImageFile(this, "image.jpg")); // 设置图片
-        mImageCropper.setCropDrawable(new ColorDrawable(0x00000000)); // 设置指示被裁减区域的 Drawable
-        mImageCropper.setCoverDrawable(new ColorDrawable(0x88000000)); // 设置蒙版区域的 Drawable
-        mImageCropper.setCropRatio(1); // 设置裁剪比例，如果裁剪比例小于 0 则固定比例
-        mImageCropper.setMinCropDrawableRectSideLength(UnitHelper.dipToPx(this, 100)); // 设置最小裁剪区域边长
-        mImageCropper.setCropBorderWidth(UnitHelper.dipToPx(this, 10)); // 设置裁剪区域的边界粗细
-        mImageCropper.setMultiSamplingEnabled(true); // 设置是否进行多重采样（抗锯齿）
+        mImageCropper.setBitmap(AssetsHelper.readImageFile(this, "image.jpg"));
+        mImageCropper.setCropDrawable(new ColorDrawable(0x00000000));
+        mImageCropper.setCoverDrawable(new ColorDrawable(0x88000000));
+        mImageCropper.setCropRatio(1);
+        mImageCropper.setMinCropDrawableRectSideLength(UnitHelper.dipToPx(this, 100));
+        mImageCropper.setCropBorderWidth(UnitHelper.dipToPx(this, 10));
+        mImageCropper.setMultiSamplingEnabled(true);
         ((Button) findViewById(R.id.button)).setOnClickListener(this);
         ((CheckBox) findViewById(R.id.check_box)).setOnCheckedChangeListener(this);
     }
@@ -39,7 +39,7 @@ public class MainActivity extends Activity implements OnClickListener, OnChecked
     @Override
     public void onClick(View v) {
         Bitmap bitmap = mImageCropper.getCroppedBitmap();
-        MemCache.putObject("BITMAP", bitmap);
+        MemCache.put("BITMAP", bitmap);
         startActivity(new Intent(this, ViewActivity.class));
     }
 
